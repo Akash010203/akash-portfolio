@@ -2,7 +2,7 @@ import os
 import asyncio
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import HTMLResponse, StreamingResponse
 from pydantic import BaseModel
 from groq import Groq
 from dotenv import load_dotenv
@@ -41,8 +41,24 @@ class ChatRequest(BaseModel):
     session_id: str = "default"  # frontend can pass a unique ID per visitor
 
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 async def root():
+    candidate_paths = [
+        os.path.join(os.path.dirname(__file__), "..", "index.html"),
+        os.path.join(os.path.dirname(__file__), "index.html"),
+        os.path.join(os.getcwd(), "index.html"),
+        os.path.join(os.getcwd(), "public", "index.html"),
+        "index.html",
+    ]
+    for p in candidate_paths:
+        if os.path.exists(p):
+            with open(p, "r", encoding="utf-8") as f:
+                return HTMLResponse(content=f.read())
+    return HTMLResponse(content="<h1>Akash Upadhyay Portfolio</h1><p>index.html not found</p>", status_code=200)
+
+
+@app.get("/health")
+async def health():
     return {"status": "Akash Portfolio AI is running ✅"}
 
 
