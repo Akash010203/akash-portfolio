@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Akash Upadhyay | AI/ML Student & Video Editor</title>
+<meta name="description" content="Akash Upadhyay is a B.Tech AI/ML student and video editor in Bhopal, building AI tools for editing and local-first AI systems.">
+<meta property="og:title" content="Akash Upadhyay | AI/ML Student & Video Editor">
+<meta property="og:description" content="B.Tech AI/ML student and video editor in Bhopal. Selected projects, tools and contact links.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf5ea;--text:#1d1633;--accent:#6d28d9;--muted:#665f78;--line:rgba(29,22,51,.16);--card:#fffefb;color-scheme:light;
+--display:"Anton","Impact","Arial Narrow",sans-serif;--body:"Manrope",system-ui,sans-serif;--hand:"Caveat",cursive;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 var(--body);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{width:min(1200px,100% - 2.5rem);margin-inline:auto}
+section{padding:clamp(4rem,9vw,8rem) 0;border-top:1px solid var(--line)}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:.95;margin:0;letter-spacing:.01em;text-transform:uppercase}
+h2{font-size:clamp(2.4rem,6vw,4.5rem);margin-bottom:2.5rem}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.7rem 1.4rem;border:1px solid var(--text);border-radius:2px;text-decoration:none;font-weight:700;background:none;color:var(--text);cursor:pointer;font:inherit;font-weight:700;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--text);color:var(--bg)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--text);border-color:var(--text);color:var(--bg)}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:1rem}
+.mark{font-family:var(--display);font-size:1.5rem;text-decoration:none;letter-spacing:.04em}
+.mark b{color:var(--accent);font-weight:400}
+nav{display:flex;align-items:center;gap:1.6rem}
+nav a.link{text-decoration:none;color:var(--muted);font-weight:500;position:relative;padding:.6rem 0;min-height:44px;display:inline-flex;align-items:center}
+nav a.link::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+nav a.link:hover,nav a.link.on{color:var(--text)}
+nav a.link.on::after,nav a.link:hover::after{transform:scaleX(1)}
+.tools{display:flex;gap:.5rem;align-items:center}
+.tools .btn{min-height:44px;padding:.4rem 1rem;font-size:.9rem}
+#menu{display:none}
+#progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left}
+@media(max-width:800px){
+ #menu{display:inline-flex}
+ nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:.5rem 1.25rem 1rem;display:none}
+ nav.open{display:flex}
+ nav a.link{border-bottom:1px solid var(--line);font-size:1.1rem}
+ nav a.link::after{display:none}
+}
+/* hero */
+#top{border-top:0;padding-top:clamp(3rem,7vw,6rem);min-height:calc(100svh - 64px);display:flex;align-items:center}
+.status{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;color:var(--muted);font-weight:500;margin-bottom:1.5rem}
+.status span:first-child::before{content:"";display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:var(--accent);margin-right:.55rem}
+.name{font-size:clamp(4.2rem,18.5vw,15rem);line-height:.86;color:var(--text);overflow-wrap:anywhere}
+.name em{font-style:normal;color:var(--accent);display:block}
+.lead{max-width:34rem;margin:2rem 0;font-size:1.2rem}
+.hand{font-family:var(--hand);font-size:1.7rem;color:var(--accent);margin:0 0 .4rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem}
+.tracks{margin-top:3.5rem;display:grid;gap:.5rem}
+.track{display:flex;gap:.5rem;overflow:hidden}
+.clip{padding:.55rem .9rem;border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--card);font-size:.92rem;font-weight:500;white-space:nowrap}
+.track.b .clip{border-left-color:var(--muted)}
+.track .clip:nth-child(1){flex:0 0 auto}
+/* work */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:2rem}
+.chip{min-height:44px;padding:.4rem 1.05rem;background:none;border:1px solid var(--line);color:var(--muted);font:inherit;font-weight:500;cursor:pointer;border-radius:2px}
+.chip[aria-pressed=true]{color:var(--text);border-color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent)}
+#q{margin-left:auto;min-height:44px;min-width:min(100%,14rem);padding:.4rem .9rem;background:var(--card);color:var(--text);border:1px solid var(--line);font:inherit;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:1.25rem}
+.card{display:flex;flex-direction:column;text-align:left;background:var(--card);border:1px solid var(--line);color:inherit;font:inherit;padding:0;cursor:pointer;transition:border-color .25s,transform .25s}
+.card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.cover{aspect-ratio:16/9;display:flex;align-items:flex-end;padding:1rem;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 30%,var(--card)),var(--card) 70%);border-bottom:1px solid var(--line);font-family:var(--display);font-size:2.4rem;line-height:1;text-transform:uppercase}
+.card .in{padding:1.1rem 1.2rem 1.3rem}
+.tag{color:var(--accent);font-weight:700;font-size:.85rem}
+.card h3{font-size:1.7rem;margin:.3rem 0 .6rem}
+.card p{margin:0;color:var(--muted);font-size:.98rem}
+.empty{color:var(--muted);padding:2rem 0}
+#more{margin:2rem auto 0;display:none}
+/* dialog */
+dialog{width:min(680px,calc(100% - 2rem));max-height:calc(100svh - 2rem);overflow:auto;background:var(--card);color:var(--text);border:1px solid var(--line);padding:0}
+dialog::backdrop{background:rgba(29,22,51,.55)}
+dialog[open]{animation:pop .35s cubic-bezier(.22,1,.36,1)}
+@keyframes pop{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.dlg{padding:clamp(1.25rem,4vw,2.2rem)}
+.dlg h3{font-size:clamp(2rem,6vw,3rem);margin:.3rem 0 1rem}
+.dlg dl{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.2rem;margin:1.4rem 0}
+.dlg dt{color:var(--muted)}.dlg dd{margin:0}
+.x{float:right}
+/* about */
+.cols{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,6vw,5rem)}
+@media(max-width:800px){.cols{grid-template-columns:1fr}}
+.list{list-style:none;margin:0;padding:0}
+.list li{padding:.85rem 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem}
+.list li span:last-child{color:var(--muted);text-align:right}
+h3.sub{font-size:1.6rem;margin:0 0 1rem;color:var(--accent)}
+.stack{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 2rem;padding:0;list-style:none}
+.stack li{border:1px solid var(--line);padding:.35rem .8rem;font-size:.95rem}
+/* contact */
+.mail{font-family:var(--display);font-size:clamp(1.8rem,6vw,4rem);text-transform:uppercase;overflow-wrap:anywhere}
+.links{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+form{display:grid;gap:.9rem;max-width:34rem;margin-top:2rem}
+label{display:grid;gap:.3rem;font-weight:500}
+input,textarea{font:inherit;color:var(--text);background:var(--card);border:1px solid var(--line);padding:.7rem .9rem;border-radius:2px;min-height:46px}
+footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+#work,#about{background:var(--card)}
+#work .card{background:var(--bg)}
+/* motion */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+body[data-motion=off] .rv{opacity:1;transform:none;transition:none}
+body[data-motion=off] *{animation:none!important;transition:none!important;scroll-behavior:auto}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+#top .wrap{position:relative}
+.portrait{position:absolute;right:0;bottom:0;height:min(80%,40rem);width:auto;max-width:50%;object-fit:contain;z-index:0}
+.name,.status,.lead,.cta,.hand,.tracks{position:relative;z-index:1}
+@media(max-width:800px){.portrait{opacity:.28;max-width:80%}}
+details{border-bottom:1px solid var(--line);padding:.4rem 0}
+summary{cursor:pointer;min-height:44px;display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;align-items:center;font-size:1.15rem}
+details p{margin:0 0 1rem;max-width:40rem}
+.q{margin:0 0 1.5rem;padding-left:1.2rem;border-left:3px solid var(--accent);font-size:1.2rem}
+.q cite{display:block;margin-top:.5rem;font-size:.95rem;font-style:normal;color:var(--muted)}
+.clients{list-style:none;display:flex;flex-wrap:wrap;gap:2rem;padding:0;margin:0 0 2rem}.clients img{height:40px;width:auto;opacity:.85}
+.ba{position:relative;max-width:720px;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line);margin-bottom:2rem}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba input{position:absolute;left:0;right:0;bottom:.5rem;width:100%}
+.vid{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}.yt{width:100%;aspect-ratio:16/9;border:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(9rem,1fr));gap:.6rem;margin:1rem 0}.gal img{width:100%;height:auto;display:block}
+img.cover{object-fit:cover;width:100%;height:auto;display:block;padding:0}
+@media(max-width:600px){.bar{flex-wrap:wrap;padding:.25rem 0}.tools .btn{padding:.4rem .7rem;font-size:.82rem}}
+.typing::after{content:"";display:inline-block;width:.09em;height:1em;margin-left:.1em;background:var(--accent);vertical-align:-.12em;animation:blink .7s steps(1) infinite}
+/* ===== AI CHAT WIDGET ===== */
+#ai-fab{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:52px;height:52px;border-radius:50%;background:var(--accent);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(109,40,217,.4);transition:transform .2s,box-shadow .2s;color:#fff}
+#ai-fab:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(109,40,217,.55)}
+#ai-fab svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#ai-fab .ai-close-icon{display:none}
+#ai-fab.open .ai-chat-icon{display:none}
+#ai-fab.open .ai-close-icon{display:block}
+#ai-drawer{position:fixed;bottom:calc(1.5rem + 64px);right:1.5rem;z-index:199;width:min(360px,calc(100vw - 2rem));background:var(--card);border:1px solid var(--line);box-shadow:0 8px 40px rgba(29,22,51,.18);display:flex;flex-direction:column;max-height:min(520px,calc(100svh - 120px));border-radius:4px;transform:translateY(16px) scale(.97);opacity:0;pointer-events:none;transition:transform .28s cubic-bezier(.22,1,.36,1),opacity .28s}
+#ai-drawer.open{transform:none;opacity:1;pointer-events:auto}
+#ai-drawer-head{padding:.75rem 1rem;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+#ai-drawer-head .ai-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+#ai-drawer-head strong{font-family:var(--display);font-size:1rem;letter-spacing:.03em;text-transform:uppercase}
+#ai-drawer-head span{font-size:.82rem;color:var(--muted);margin-left:auto}
+#ai-msgs{flex:1;overflow-y:auto;padding:.75rem 1rem;display:flex;flex-direction:column;gap:.65rem;scroll-behavior:smooth}
+#ai-msgs::-webkit-scrollbar{width:4px}
+#ai-msgs::-webkit-scrollbar-thumb{background:var(--line);border-radius:2px}
+.ai-msg{max-width:88%;padding:.6rem .85rem;border-radius:3px;font-size:.93rem;line-height:1.5;word-break:break-word}
+.ai-msg.user{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:1px}
+.ai-msg.bot{align-self:flex-start;background:var(--bg);border:1px solid var(--line);color:var(--text);border-bottom-left-radius:1px}
+.ai-msg.bot.typing-bubble::after{content:"";display:inline-block;width:.08em;height:.95em;margin-left:.08em;background:var(--accent);vertical-align:-.1em;animation:blink .7s steps(1) infinite}
+.ai-suggestion-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.2rem}
+.ai-suggestion{padding:.3rem .7rem;border:1px solid var(--accent);color:var(--accent);background:none;font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;border-radius:2px;transition:background .15s,color .15s}
+.ai-suggestion:hover{background:var(--accent);color:#fff}
+#ai-form{display:flex;gap:.5rem;padding:.65rem .75rem;border-top:1px solid var(--line);flex-shrink:0}
+#ai-input{flex:1;font:inherit;font-size:.93rem;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:2px;padding:.5rem .75rem;min-height:40px;resize:none;outline:none;transition:border-color .2s}
+#ai-input:focus{border-color:var(--accent)}
+#ai-send{min-width:40px;height:40px;padding:0;border:none;border-radius:2px;background:var(--accent);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+#ai-send:disabled{opacity:.45;cursor:not-allowed}
+#ai-send svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+#ai-powered{font-size:.72rem;color:var(--muted);text-align:center;padding:.35rem;flex-shrink:0}
+/* ===== END AI CHAT ===== */
+@keyframes blink{50%{opacity:0}}
+.swin{animation:swin .8s cubic-bezier(.22,1,.36,1) both}
+@keyframes swin{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-30%)}}
+.track.a{animation:slide 24s linear infinite alternate}
+.track.b{animation:slide 30s linear infinite alternate-reverse}
+.cur,.dot{position:fixed;left:0;top:0;pointer-events:none;z-index:100;opacity:0;transition:opacity .25s}
+.cur{width:36px;height:36px;margin:-18px 0 0 -18px;border:2px solid var(--accent);border-radius:50%;transition:opacity .25s,width .25s,height .25s,margin .25s,background .25s}
+.cur.big{width:68px;height:68px;margin:-34px 0 0 -34px;background:color-mix(in srgb,var(--accent) 16%,transparent)}
+.dot{width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--accent)}
+.cur.on,.dot.on{opacity:1}
+.mag{transition:background .2s,color .2s,border-color .2s,transform .3s cubic-bezier(.22,1,.36,1)}
+body[data-motion=off] .cur,body[data-motion=off] .dot{display:none}
+@media(hover:none),(pointer:coarse){.cur,.dot{display:none}}
+</style>
+</head>
+<body data-motion="on">
+<header>
+ <div class="wrap bar">
+  <a class="mark" href="#top" id="mark" aria-label="Back to top"></a>
+  <nav id="nav" aria-label="Main"></nav>
+  <div class="tools">
+   <a class="btn" href="https://akash-edit.vercel.app/" target="_blank" rel="noopener noreferrer">Video work</a>
+   <a class="btn" href="https://github.com/Akash010203" target="_blank" rel="noopener noreferrer">GitHub</a>
+   
+   <button class="btn" id="menu" aria-expanded="false" aria-controls="nav" type="button">Menu</button>
+  </div>
+ </div>
+ <div id="progress" aria-hidden="true"></div>
+</header>
+
+<main>
+<section id="top" aria-labelledby="h1"><div class="wrap">
+ <div class="status" id="status"></div>
+ <p class="hand">Edit the story. Build the system.</p>
+ <h1 class="name" id="h1"></h1>
+ <p class="lead" id="intro"></p>
+ <div class="cta"><a class="btn primary" href="#work">View work</a><a class="btn" href="#contact">Contact</a><a class="btn" href="https://akash-edit.vercel.app/" target="_blank" rel="noopener noreferrer">Editing portfolio</a></div>
+ <div class="tracks" aria-hidden="true">
+  <div class="track a" id="ta"></div><div class="track b" id="tb"></div>
+ </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+ <h2 class="rv">Selected work</h2>
+ <div class="filters rv" id="filters" role="group" aria-label="Filter projects"></div>
+ <div class="grid" id="grid" aria-live="polite"></div>
+ <button class="btn" id="more" type="button">Load more</button>
+</div></section>
+
+<section id="experience"><div class="wrap rv"><h2>Experience</h2><div id="exp"></div></div></section>
+
+<section id="about"><div class="wrap cols">
+ <div class="rv"><h2>About</h2><p id="about-text" style="max-width:34rem"></p></div>
+ <div class="rv">
+  <h3 class="sub">Tools</h3><ul class="stack" id="tools"></ul>
+  <h3 class="sub">Education and learning</h3><ul class="list" id="edu"></ul>
+ </div>
+</div></section>
+
+<section id="proof"><div class="wrap rv"><h2>Recognition</h2><div id="proofbody"></div></div></section>
+
+<section id="contact"><div class="wrap rv">
+ <h2>Contact</h2>
+ <p class="muted" style="max-width:34rem;margin-top:-1rem">For editing work or AI/ML collaboration, reach out on any channel below.</p>
+ <div id="mailbox"></div>
+ <div class="links" id="links"></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span id="foot"></span><a href="#top">Back to top</a></div></footer>
+
+<dialog id="dlg" aria-labelledby="dt"></dialog>
+
+<script>
+/* ===== EDIT YOUR DETAILS HERE ===== */
+const SITE={
+ name:"Akash Upadhyay", first:"Akash", last:"Upadhyay", brand:"AU",
+ role:"B.Tech AI/ML student and video editor", location:"Bhopal, India",
+ availability:"Open to editing work and collaborations",
+ intro:"I study AI and machine learning at LNCT Bhopal and edit video for clients. I build tools that bring the two together.",
+ about:"I’m a B.Tech student in CSE (AI & ML) at LNCT, Bhopal, and I work as a video editor. Most of my projects start from a problem I hit while editing or learning: an editing studio that automates routine cuts, an offline AI workbench for confidential work, and a portfolio site I built from scratch. I’m learning Python by building real things, and I prefer hands-on practice to theory.",
+ email:"akashupadhyay0303@gmail.com", /* shown in Contact with a message form */
+ whatsapp:"918463053957", /* international digits, e.g. 919876543210 */
+ resume:"", /* path or link to your CV, e.g. assets/resume.pdf */
+ portrait:"", /* path to your portrait, e.g. assets/portrait.webp */
+ beforeAfter:null, /* {before:"img",after:"img",caption:"text"} */
+ awards:[], /* {name,year} */
+ testimonials:[], /* {quote,name,role} */
+ clients:[], /* {name,logo} */
+ /* project extras you can add: coverImage, gallery:[{src,alt}], videoUrl (YouTube), liveUrl, sourceUrl */
+ experience:[
+  {title:"Freelance video editor",org:"Independent",period:"",text:"I edit videos for clients, including motion graphics and caption-style edits in Premiere Pro and After Effects. Client names are kept confidential."},
+  {title:"Smart India Hackathon 2026",org:"Team project",period:"2026",text:"Building SOVEREIGN-AI, an offline agentic AI workbench, with a small team."},
+  {title:"B.Tech, CSE (AI & ML)",org:"LNCT Bhopal",period:"In progress",text:"Studying AI and machine learning on the RGPV curriculum."},
+  {title:"CS50P",org:"Python course",period:"",text:"Completed the course and now practising Python by building projects."}
+ ],
+ social:[
+  {label:"GitHub",url:"https://github.com/Akash010203"},
+  {label:"Instagram",url:"https://instagram.com/akash_upadhyay03_"},
+  {label:"Editing portfolio",url:"https://akash-edit.vercel.app/"},
+  {label:"YouTube",url:"https://youtube.com/@veragivmg"}
+ ],
+ tools:["Python","Premiere Pro","After Effects","Photoshop","Illustrator","Git","VS Code"],
+ education:[
+  ["B.Tech, CSE (AI & ML)","LNCT Bhopal"],
+  ["CS50P (Python)","Completed"]
+ ],
+ clipsA:["Python","Machine learning","Local LLMs","Automation","Computer vision"],
+ clipsB:["Premiere Pro","After Effects","Motion graphics","Captions and typography","Client edits"],
+ projects:[
+  {id:"sketchforge",title:"SketchForge AI",category:"AI Tools",summary:"An agentic workbench that turns hand-drawn sketches into verified, runnable web apps.",
+   description:"SketchForge AI reads sketches, wireframes and whiteboard diagrams, then designs, builds, tests and repairs a full-stack web app in a closed loop. It pairs OpenCV layout extraction with NVIDIA Nemotron models on Nebius Token Factory, researches design patterns with Tavily, and checks the result in a headless browser. Submitted to the Nebius x NVIDIA Global AI Hackathon (Coding and Agentic Engineering track).",
+   role:"Developer",status:"Hackathon submission",tools:["Python","OpenCV","Playwright","Flask","NVIDIA Nemotron","Nebius Token Factory","Tavily"],sourceUrl:"https://github.com/Akash010203/sketchforge-ai",featured:true},
+  {id:"veragi",title:"VERAGI",category:"AI Tools",summary:"An AI studio that turns a client brief and raw media into a Premiere Pro / After Effects project.",
+   description:"VERAGI aims to take a brief and raw footage and produce a finished editing project without manual steps. It mines tutorial videos into reusable editing recipes and runs automated quality checks on its output.",
+   role:"Creator",status:"In progress",tools:["Python","Premiere Pro","After Effects","Phi-3.5-vision","ONNX"],featured:true},
+  {id:"sovereign",title:"SOVEREIGN-AI",category:"AI Tools",summary:"An offline agentic AI workbench for confidential industrial work, built for Smart India Hackathon 2026.",
+   description:"A local-first workbench (problem statement SIH26117) that runs open-weight models with no cloud AI calls. The plan covers an agent engine, local document search with citations, OCR for scanned documents, and generated reports.",
+   role:"Team project",status:"In progress",tools:["Python","PyTorch","llama.cpp","Qwen3","SQLite"],featured:true},
+  {id:"portfolio",title:"Video editing portfolio",category:"Web",summary:"A single-file portfolio site with a showreel, project grid and video modal.",
+   description:"A neo-brutalist portfolio for my video editing work, with timecode motifs, a project card grid that opens videos in a modal, and contact links. Deployed on Vercel from GitHub.",
+   role:"Design and development",status:"Live",liveUrl:"https://akash-edit.vercel.app/",tools:["HTML","CSS","JavaScript","Vercel"],featured:true},
+  {id:"readme",title:"Animated GitHub profile",category:"Web",summary:"A profile README with a custom banner, stats cards and a contribution animation.",
+   description:"A GitHub profile page with a Python-generated banner, self-hosted stats cards deployed on Vercel, and a contribution snake animation.",
+   role:"Design and development",status:"In progress",tools:["Python","Pillow","NumPy","Vercel"],featured:false}
+ ]
+};
+/* ===== END OF EDITABLE DETAILS ===== */
+
+const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const KEY="akash-upadhyay-motion";
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* static content */
+$("#mark").innerHTML=SITE.brand.slice(0,1)+"<b>"+SITE.brand.slice(1)+"</b>";
+$("#h1").innerHTML=esc(SITE.first)+"<em>"+esc(SITE.last)+"</em>";
+$("#status").innerHTML="<span>"+esc(SITE.availability)+"</span><span>"+esc(SITE.role)+"</span><span>"+esc(SITE.location)+"</span>";
+$("#intro").textContent=SITE.intro;
+$("#about-text").textContent=SITE.about;
+$("#ta").innerHTML=SITE.clipsA.concat(SITE.clipsA).map(c=>'<span class="clip">'+esc(c)+'</span>').join("");
+$("#tb").innerHTML=SITE.clipsB.concat(SITE.clipsB).map(c=>'<span class="clip">'+esc(c)+'</span>').join("");
+$("#tools").innerHTML=SITE.tools.map(t=>"<li>"+esc(t)+"</li>").join("");
+$("#edu").innerHTML=SITE.education.map(e=>"<li><span>"+esc(e[0])+"</span><span>"+esc(e[1])+"</span></li>").join("");
+$("#foot").textContent="© "+new Date().getFullYear()+" "+SITE.name;
+document.querySelector('meta[name=description]');
+const ld=document.createElement("script");ld.type="application/ld+json";
+ld.textContent=JSON.stringify({"@context":"https://schema.org","@type":"Person",name:SITE.name,jobTitle:SITE.role,address:{"@type":"PostalAddress",addressLocality:"Bhopal",addressCountry:"IN"},sameAs:SITE.social.map(s=>s.url)});
+document.head.appendChild(ld);
+
+/* optional sections: they appear only when you supply the data */
+const ea=s=>esc(s).replace(/'/g,'&#39;');
+function ytId(u){const m=String(u||'').match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);return m?m[1]:''}
+function media(p){let h='';const id=ytId(p.videoUrl);
+ if(id)h+=`<div class='vid'><button class='btn primary' type='button' id='pv' data-id='${id}'>Play video</button><a class='btn' href='https://www.youtube.com/watch?v=${id}' target='_blank' rel='noopener noreferrer'>Watch on YouTube</a></div>`;
+ else if(p.videoUrl)h+=`<div class='vid'><a class='btn primary' href='${ea(p.videoUrl)}' target='_blank' rel='noopener noreferrer'>Watch video</a></div>`;
+ if(p.gallery&&p.gallery.length)h+=`<div class='gal'>${p.gallery.map(g=>`<img loading='lazy' width='320' height='180' alt='${ea(g.alt||p.title)}' src='${ea(g.src)}'>`).join('')}</div>`;
+ return h}
+if(SITE.portrait)$('#top .wrap').insertAdjacentHTML('beforeend',`<img class='portrait' src='${ea(SITE.portrait)}' alt='Portrait of ${ea(SITE.name)}' width='480' height='640' fetchpriority='high'>`);
+if(SITE.resume)document.querySelector('.cta').insertAdjacentHTML('beforeend',`<a class='btn' href='${ea(SITE.resume)}' download>Download CV</a>`);
+if(SITE.whatsapp)SITE.social.push({label:'WhatsApp',url:'https://wa.me/'+SITE.whatsapp.replace(/\D/g,'')+'?text='+encodeURIComponent('Hi '+SITE.first+', I saw your portfolio.')});
+if(SITE.experience.length)$('#exp').innerHTML=SITE.experience.map((x,i)=>`<details${i?'':' open'}><summary><strong>${esc(x.title)}</strong><span class='muted'>${esc([x.org,x.period].filter(Boolean).join(', '))}</span></summary><p class='muted'>${esc(x.text)}</p></details>`).join('');else $('#experience').remove();
+let pr='';const ba=SITE.beforeAfter;
+if(ba&&ba.before&&ba.after)pr+=`<h3 class='sub'>Before and after</h3><div class='ba' style='--p:50%'><img alt='After' src='${ea(ba.after)}'><img alt='Before' src='${ea(ba.before)}' style='clip-path:inset(0 calc(100% - var(--p)) 0 0)'><input type='range' min='0' max='100' value='50' aria-label='Drag to compare before and after'></div>${ba.caption?`<p class='muted'>${esc(ba.caption)}</p>`:''}`;
+if(SITE.clients.length)pr+=`<h3 class='sub'>Clients</h3><ul class='clients'>${SITE.clients.map(c=>`<li><img alt='${ea(c.name)}' src='${ea(c.logo)}' height='40' width='120'></li>`).join('')}</ul>`;
+if(SITE.awards.length)pr+=`<h3 class='sub'>Awards</h3><ul class='list' style='margin-bottom:2rem'>${SITE.awards.map(a=>`<li><span>${esc(a.name)}</span><span>${esc(a.year||'')}</span></li>`).join('')}</ul>`;
+if(SITE.testimonials.length)pr+=`<h3 class='sub'>Testimonials</h3>${SITE.testimonials.map(t=>`<blockquote class='q'><p>“${esc(t.quote)}”</p><cite>${esc(t.name)}${t.role?', '+esc(t.role):''}</cite></blockquote>`).join('')}`;
+if(pr){$('#proofbody').innerHTML=pr;const r=$('.ba input');if(r)r.oninput=()=>r.parentNode.style.setProperty('--p',r.value+'%')}else $('#proof').remove();
+
+/* nav */
+const secs=[['work','Work'],['experience','Experience'],['about','About'],['proof','Recognition'],['contact','Contact']].filter(s=>document.getElementById(s[0]));
+$("#nav").innerHTML=secs.map(s=>'<a class="link" href="#'+s[0]+'">'+s[1]+"</a>").join("");
+const nav=$("#nav"),menu=$("#menu");
+function closeMenu(){nav.classList.remove("open");menu.setAttribute("aria-expanded","false")}
+menu.onclick=()=>{const o=nav.classList.toggle("open");menu.setAttribute("aria-expanded",o)};
+nav.onclick=e=>{if(e.target.closest("a"))closeMenu()};
+addEventListener("keydown",e=>{if(e.key==="Escape"&&nav.classList.contains("open")){closeMenu();menu.focus()}});
+
+/* motion toggle */
+function setMotion(on){document.body.dataset.motion=on?"on":"off";try{localStorage.setItem(KEY,on?"on":"off")}catch(e){}}
+let saved=null;try{saved=localStorage.getItem(KEY)}catch(e){}
+setMotion(!reduce);
+
+
+/* projects */
+const PAGE=6;let cat="All",term="",shown=PAGE;
+const cats=["All",...new Set(SITE.projects.map(p=>p.category))];
+const ordered=[...SITE.projects].sort((a,b)=>b.featured-a.featured);
+$("#filters").innerHTML=cats.map(c=>'<button class="chip" type="button" aria-pressed="'+(c==="All")+'" data-c="'+esc(c)+'">'+esc(c)+"</button>").join("")+'<input id="q" type="search" placeholder="Search projects" aria-label="Search projects">';
+function render(){
+ const list=ordered.filter(p=>(cat==="All"||p.category===cat)&&(p.title+p.summary+p.tools.join(" ")).toLowerCase().includes(term));
+ $("#grid").innerHTML=list.length?list.slice(0,shown).map(p=>'<button class="card" type="button" data-id="'+p.id+'">'+(p.coverImage?'<img class="cover" loading="lazy" width="640" height="360" alt="'+esc(p.title)+' cover" src="'+esc(p.coverImage)+'">':'<div class="cover">'+esc(p.title)+'</div>')+'<div class="in"><span class="tag">'+esc(p.category)+" · "+esc(p.status)+"</span><h3>"+esc(p.title)+"</h3><p>"+esc(p.summary)+"</p></div></button>").join(""):'<p class="empty">No projects match. Clear the search or pick another category.</p>';
+ $("#more").style.display=list.length>shown?"inline-flex":"none";if(window.swReady)swBuildNow();
+}
+$("#filters").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;cat=b.dataset.c;shown=PAGE;document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b));render()};
+$("#q").oninput=e=>{term=e.target.value.trim().toLowerCase();shown=PAGE;render()};
+$("#more").onclick=()=>{shown+=PAGE;render()};
+render();
+
+/* dialog */
+const dlg=$("#dlg");
+$("#grid").onclick=e=>{
+ const c=e.target.closest(".card");if(!c)return;
+ const p=SITE.projects.find(x=>x.id===c.dataset.id);
+ dlg.innerHTML='<div class="dlg"><button class="btn x" type="button" id="close" aria-label="Close project details">Close</button><span class="tag">'+esc(p.category)+'</span><h3 id="dt">'+esc(p.title)+"</h3><p>"+esc(p.description)+"</p><dl><dt>Role</dt><dd>"+esc(p.role)+"</dd><dt>Status</dt><dd>"+esc(p.status)+"</dd><dt>Built with</dt><dd>"+p.tools.map(esc).join(", ")+"</dd></dl>"+media(p)+(p.liveUrl?'<a class="btn primary" href="'+esc(p.liveUrl)+'" target="_blank" rel="noopener noreferrer">Open live site</a>':"")+(p.sourceUrl?' <a class="btn" href="'+esc(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">View source</a>':"")+"</div>";
+ dlg.showModal();$("#close").onclick=()=>dlg.close();const pv=$('#pv');if(pv)pv.onclick=()=>{pv.outerHTML=`<iframe class='yt' src='https://www.youtube-nocookie.com/embed/${pv.dataset.id}?autoplay=1' title='Project video' allow='autoplay; encrypted-media; picture-in-picture' allowfullscreen></iframe>`};
+};
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+
+/* contact */
+$("#mailbox").innerHTML=SITE.email?'<a class="mail" href="mailto:'+esc(SITE.email)+'">'+esc(SITE.email)+'</a><form id="f"><label>Name<input name="n" required autocomplete="name"></label><label>Message<textarea name="m" rows="4" required></textarea></label><button class="btn primary" type="submit">Open in email app</button></form>':"";
+if(SITE.email)$("#f").onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);location.href="mailto:"+SITE.email+"?subject="+encodeURIComponent("Message from "+f.get("n"))+"&body="+encodeURIComponent(f.get("m"))};
+$("#links").innerHTML=SITE.social.map(s=>'<a class="btn" href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.label)+"</a>").join("");
+
+/* swarm effect: particles gather around your pointer (own code, no third-party script) */
+const cv=document.createElement('canvas');cv.setAttribute('aria-hidden','true');cv.style.cssText='position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:45;display:block';document.body.appendChild(cv);
+const cx=cv.getContext('2d');let P=[],swOn=false,px=innerWidth/2,py=innerHeight/2;
+function fit(){cv.width=innerWidth;cv.height=innerHeight}addEventListener('resize',fit);fit();
+addEventListener('pointermove',e=>{px=e.clientX;py=e.clientY});
+function swStop(){}
+function swTick(){
+ if(!swOn)return;
+ 
+ 
+ cx.globalCompositeOperation='destination-out';cx.fillStyle='rgba(0,0,0,.35)';cx.fillRect(0,0,cv.width,cv.height);cx.globalCompositeOperation='source-over';cx.fillStyle='#6d28d9';
+ const now=performance.now();let idle=0,busy=false;
+ for(const p of P){if(p.lt)idle++;else busy=true}
+ if(swMode===0&&!busy&&idle>=24&&now-swModeT>5500){swMode=1;swModeT=now;swK=(swK+1)%3;swPts=swShape(swK,idle)}
+ else if(swMode===1&&now-swModeT>4200){swMode=0;swModeT=now}
+ const R=Math.min(130,innerWidth*.3),ex=Math.min(innerWidth-R-20,Math.max(R+20,px)),ey=Math.min(innerHeight-R-20,Math.max(R+20,py));
+ for(const p of P){if(!p.lt){swStep(p);continue}swIdle(p,now,ex,ey,R)}
+ if(P.some(p=>p.dead))P=P.filter(p=>!p.dead);swFx();swAgents();requestAnimationFrame(swTick)}
+function swStart(){
+ 
+ if(swOn)return;
+ fit();swOn=true;window.swReady=1;swBuildNow();swTick()}
+/* live build: small cursors fly in and assemble each visible element */
+let swEls=[],swQ=[],swAuto=false,swEnd=0,swDur=5000;
+const SWSEL='#top .status,#top .name,#top .lead,#top .hand,#top .cta .btn,.tracks,h2,.card,.filters,summary,#about-text,.stack li,.links .btn';
+function swBuild(){
+ const out=[];let i=0;
+ document.querySelectorAll(SWSEL).forEach(e=>{
+  if(e._b)return;
+  const r=e.getBoundingClientRect();if(r.width<4)return;
+  if(r.top>innerHeight*.92){e.style.opacity=0;return}
+  e._b=1;if(r.bottom<0){e.style.opacity=1;return}
+  const d=i*160,at=performance.now()+d,o={e,n:Math.min(12,Math.max(4,Math.round(r.width*r.height/9000))),o:0,r:0};i++;
+  swQ.push({e,r,sy:scrollY,lab:e.matches('h2,.name')?'Heading':e.matches('.btn')?'Button':e.matches('.card')?'Card':e.matches('.lead,.status,.hand,#about-text')?'Text':e.matches('.tracks')?'Timeline':'Block',t0:at});
+  e.style.opacity=0;
+  for(let j=0;j<o.n;j++){const a=Math.random()*6.28,x0=innerWidth/2+Math.cos(a)*innerWidth,y0=innerHeight/2+Math.sin(a)*innerHeight;
+   out.push({x:x0,y:y0,x0,y0,tx:r.left+Math.random()*r.width,ty:r.top+Math.random()*r.height,sy:scrollY,at:at+Math.random()*400,dur:1700+Math.random()*1100,t:true,el:o,c:'#6d28d9',vx:0,vy:0,s:3})}
+  setTimeout(()=>{e.style.opacity=1},d+4400);
+ });
+ if(swQ.length>40)swQ.splice(0,swQ.length-40);
+ return out}
+let swRaf=0;
+function swBuildNow(){if(!swOn)return;P.push(...swBuild());if(P.length>170)P.splice(0,P.length-170)}
+addEventListener('scroll',()=>{if(swOn&&!swRaf){swRaf=1;requestAnimationFrame(()=>{swRaf=0;swBuildNow()})}},{passive:true});
+/* named cursors work on one element each: dashed selection box, handles, role label and progress */
+const AG=[['Layout','#6d28d9'],['Type','#6d28d9'],['Motion','#6d28d9'],['Color','#6d28d9'],['Code','#6d28d9']];
+const swPos=AG.map(()=>({x:innerWidth/2,y:innerHeight+40}));
+function arrow(){cx.beginPath();cx.moveTo(0,0);cx.lineTo(0,15);cx.lineTo(4,11);cx.lineTo(8,18);cx.lineTo(10,17);cx.lineTo(6,10);cx.lineTo(11,10);cx.closePath()}
+function swAgents(){
+ if(!swQ.length)return;
+ const now=performance.now(),dy=scrollY,last=AG.map(()=>null);
+ cx.font='600 11px Manrope,system-ui,sans-serif';
+ swQ.forEach((q,j)=>{
+  if(now<q.t0)return;last[j%5]=q;
+  const k=(now-q.t0)/2600;if(k>1)return;
+  const a=AG[j%5],r=q.r,y=r.top-(dy-q.sy),w=cx.measureText(q.lab).width+12;
+  cx.strokeStyle=a[1];cx.fillStyle=a[1];cx.lineWidth=1.5;cx.setLineDash([6,4]);cx.strokeRect(r.left,y,r.width,r.height);cx.setLineDash([]);
+  [[r.left,y],[r.right,y],[r.left,y+r.height],[r.right,y+r.height]].forEach(c=>cx.fillRect(c[0]-3,c[1]-3,6,6));
+  cx.fillRect(r.left,y+r.height,r.width*Math.min(1,k),2);
+  cx.fillRect(r.left,y-18,w,16);cx.fillStyle='#fff';cx.fillText(q.lab,r.left+6,y-6);
+ });
+ AG.forEach((a,i)=>{
+  const q=last[i],p=swPos[i];
+  if(q&&now<q.t0+3400){const r=q.r;p.x+=(r.left+r.width/2-p.x)*.05;p.y+=(r.top-(dy-q.sy)+r.height/2-p.y)*.05}else return;
+  cx.save();cx.translate(p.x,p.y);cx.scale(1.5,1.5);cx.rotate(-.5);cx.fillStyle=a[1];cx.strokeStyle='#fff';cx.lineWidth=1;arrow();cx.fill();cx.stroke();cx.restore();
+  const w=cx.measureText(a[0]).width+14;cx.fillStyle=a[1];cx.fillRect(p.x+14,p.y+18,w,18);cx.fillStyle='#fff';cx.fillText(a[0],p.x+21,p.y+31);
+ });
+
+}
+const EMO=['😎','😄','🤙','👍','🔥','✨','😍','🙌','👌','💜','🤩','😁'];
+function swStep(p){
+ const now=performance.now();
+ if(now<p.at){cx.save();cx.translate(p.x,p.y);cx.rotate(-.5);cx.fillStyle=p.c;arrow();cx.fill();cx.restore();return true}
+ if(!p.lt){
+  const k=Math.min(1,(now-p.at)/p.dur),q=1-Math.pow(1-k,3),u=1-q,bx=p.bx===undefined?(p.bx=(p.x0+p.tx)/2+(Math.random()-.5)*500):p.bx,by=p.by===undefined?(p.by=(p.y0+p.ty)/2+(Math.random()-.5)*500):p.by;
+  p.x=u*u*p.x0+2*u*q*bx+q*q*p.tx;p.y=u*u*p.y0+2*u*q*by+q*q*(p.ty+p.sy-scrollY);
+  if(k>=1){p.lt=now;p.emo=EMO[(Math.random()*EMO.length)|0];p.el.o++;
+   if(p.el.o>=p.el.n*.5&&!p.el.r){p.el.r=1;p.el.e.style.opacity=1;swFxList.push({x:p.tx,y:p.ty+p.sy-scrollY,t:now});swShow(p.el.e)}}
+  cx.save();cx.translate(p.x,p.y);cx.rotate(-.5);cx.fillStyle=p.c;arrow();cx.fill();cx.restore();return true}
+ return false}
+/* after the work is done: cursors circle your pointer, periodically form a shape (smiley, heart, star), then return to circling */
+let swMode=0,swModeT=performance.now(),swK=-1,swPts=[],swIdx=0;
+function swShape(k,n){const o=[];
+ if(k===0){const nO=Math.round(n*.42),nE=Math.round(n*.08),nM=Math.max(2,n-nO-2*nE);
+  for(let i=0;i<nO;i++){const a=i/nO*6.283;o.push([Math.cos(a),Math.sin(a)])}
+  for(const sx of[-.38,.38])for(let i=0;i<nE;i++){const a=i/nE*6.283;o.push([sx+.1*Math.cos(a),-.3+.1*Math.sin(a)])}
+  for(let i=0;i<nM;i++){const a=.35+i/(nM-1)*(Math.PI-.7);o.push([.55*Math.cos(a),.1+.55*Math.sin(a)])}
+ }else if(k===1){for(let i=0;i<n;i++){const t=i/n*6.283;o.push([16*Math.pow(Math.sin(t),3)/17,-(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t))/17])}}
+ else{const v=[];for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,r=i%2?.42:1;v.push([r*Math.cos(a),r*Math.sin(a)])}
+  for(let i=0;i<n;i++){const f=i/n*10,j=Math.floor(f),t=f-j,a=v[j%10],b=v[(j+1)%10];o.push([a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t])}}
+ return o}
+function swIdle(p,now,ex,ey,R){
+ if(p.k===undefined){p.k=swIdx++;p.or=70+(p.k%5)*26;p.oa=Math.random()*6.283;p.os=(p.k%2?1:-1)*(1.1-(p.k%5)*.14);p.lf=.07+(p.k%7)*.008}
+ let tx,ty,rot;
+ if(swMode===1&&swPts.length){const q=swPts[p.k%swPts.length];tx=ex+q[0]*R;ty=ey+q[1]*R;rot=Math.atan2(q[1],q[0])+1.57}
+ else{const a=p.oa+now/1000*p.os,r=p.or+Math.sin(now/700+p.k)*6;tx=px+Math.cos(a)*r;ty=py+Math.sin(a)*r;rot=a+(p.os>0?3.1416:0)}
+ p.x+=(tx-p.x)*p.lf;p.y+=(ty-p.y)*p.lf;
+ cx.save();cx.translate(p.x,p.y);cx.rotate(rot);cx.scale(.75,.75);cx.fillStyle='#6d28d9';arrow();cx.fill();cx.restore()}
+/* click ripples where cursors land, and live typing of the intro line */
+let swFxList=[];
+function swFx(){const now=performance.now();swFxList=swFxList.filter(f=>now-f.t<900);for(const f of swFxList){const k=(now-f.t)/900;cx.globalAlpha=1-k;cx.strokeStyle='#6d28d9';cx.lineWidth=2;cx.beginPath();cx.arc(f.x,f.y,6+k*40,0,6.283);cx.stroke()}cx.globalAlpha=1}
+const TYPESEL='.name,.hand,.lead,.status,h2,#about-text';
+function swShow(e){if(e.matches(TYPESEL))swType(e);else e.classList.add('swin')}
+function swType(e){
+ const nodes=[],w=document.createTreeWalker(e,NodeFilter.SHOW_TEXT);let n;
+ while(n=w.nextNode())if(n.nodeValue.length)nodes.push([n,n.nodeValue]);
+ const total=nodes.reduce((a,x)=>a+x[1].length,0);if(!total)return;
+ e.style.minHeight=e.offsetHeight+'px';nodes.forEach(x=>{x[0].nodeValue=''});
+ const caret=!e.matches('.name');if(caret)e.classList.add('typing');
+ const step=total>200?4:total>80?2:1,gap=total<20?85:total<80?45:30;let i=0;
+ const id=setInterval(()=>{i+=step;let r=i;for(const x of nodes){x[0].nodeValue=x[1].slice(0,Math.max(0,Math.min(x[1].length,r)));r-=x[1].length}
+  if(i>=total){clearInterval(id);e.style.minHeight='';e.classList.remove('typing')}},gap)}
+
+if(!reduce)Promise.race([document.fonts.ready,new Promise(r=>setTimeout(r,700))]).then(swStart);
+
+/* cursor follower and magnetic buttons (mouse devices only, respects Motion toggle) */
+if(matchMedia("(hover:hover) and (pointer:fine)").matches){
+ const ring=document.createElement("div"),dot=document.createElement("div");
+ ring.className="cur";dot.className="dot";ring.setAttribute("aria-hidden","true");dot.setAttribute("aria-hidden","true");
+ document.body.append(ring,dot);
+ let mx=0,my=0,rx=0,ry=0,seen=false;
+ addEventListener("pointermove",e=>{
+  if(e.pointerType!=="mouse")return;
+  mx=e.clientX;my=e.clientY;
+  if(!seen){seen=true;rx=mx;ry=my;ring.classList.add("on");dot.classList.add("on")}
+  dot.style.transform="translate("+mx+"px,"+my+"px)";
+  ring.classList.toggle("big",!!(e.target.closest&&e.target.closest("a,button,.chip,.card,input,textarea")));
+ });
+ document.documentElement.addEventListener("mouseleave",()=>{seen=false;ring.classList.remove("on");dot.classList.remove("on")});
+ (function loop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform="translate("+rx+"px,"+ry+"px)";requestAnimationFrame(loop)})();
+ document.querySelectorAll(".cta .btn,.links .btn,.tools .btn").forEach(b=>{
+  b.classList.add("mag");
+  b.addEventListener("pointermove",e=>{if(document.body.dataset.motion!=="on")return;const r=b.getBoundingClientRect();b.style.transform="translate("+((e.clientX-r.left-r.width/2)*.25)+"px,"+((e.clientY-r.top-r.height/2)*.35)+"px)"});
+  b.addEventListener("pointerleave",()=>{b.style.transform=""});
+ });
+}
+
+/* reveal, active link, progress */
+const rv=document.querySelectorAll(".rv");
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+rv.forEach(el=>io.observe(el));
+const links=[...document.querySelectorAll("nav a.link")];
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle("on",l.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
+secs.forEach(s=>so.observe($("#"+s[0])));
+addEventListener("scroll",()=>{const h=document.documentElement;$("#progress").style.transform="scaleX("+(h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight))+")"},{passive:true});
+</script>
+
+<!-- ===== AI CHAT WIDGET HTML ===== -->
+<button id="ai-fab" aria-label="Open AI assistant" aria-expanded="false" aria-controls="ai-drawer">
+ <svg class="ai-chat-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+ <svg class="ai-close-icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+
+<div id="ai-drawer" role="dialog" aria-label="AI assistant chat" aria-modal="false">
+ <div id="ai-drawer-head">
+  <span class="ai-dot" aria-hidden="true"></span>
+  <strong>Ask about Akash</strong>
+  <span>AI · Powered by Groq</span>
+ </div>
+ <div id="ai-msgs" aria-live="polite" aria-atomic="false"></div>
+ <div id="ai-form-wrap">
+  <form id="ai-form" autocomplete="off">
+   <textarea id="ai-input" placeholder="Ask me anything about Akash…" rows="1" maxlength="400" aria-label="Your question"></textarea>
+   <button id="ai-send" type="submit" aria-label="Send">
+    <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+   </button>
+  </form>
+  <p id="ai-powered">AI answers are based on Akash's portfolio data</p>
+ </div>
+</div>
+
+<script>
+/* ===== AI CHAT WIDGET SCRIPT ===== */
+(function(){
+ // ---- CONFIG ----
+ // Change this to your deployed backend URL when you go live.
+ // For local dev keep it as localhost.
+ const API = 'http://127.0.0.1:8000/api/chat';
+
+ // Starter suggestions shown before first message
+ const SUGGESTIONS = [
+  'Who is Akash?',
+  'Tell me about SketchForge AI',
+  'How was VERAGI made?',
+  'What is SOVEREIGN-AI?',
+  'How can I hire Akash?'
+ ];
+
+ const fab = document.getElementById('ai-fab');
+ const drawer = document.getElementById('ai-drawer');
+ const msgs = document.getElementById('ai-msgs');
+ const form = document.getElementById('ai-form');
+ const input = document.getElementById('ai-input');
+ const sendBtn = document.getElementById('ai-send');
+
+ // Simple unique session ID per visitor
+ const SESSION_ID = 'sess_' + Math.random().toString(36).slice(2);
+ let isOpen = false;
+ let isStreaming = false;
+ let introShown = false;
+
+ // ---- Open / Close ----
+ function openDrawer(){
+  isOpen = true;
+  fab.classList.add('open');
+  drawer.classList.add('open');
+  fab.setAttribute('aria-expanded','true');
+  if(!introShown){ showIntro(); introShown = true; }
+  setTimeout(()=>input.focus(), 300);
+ }
+ function closeDrawer(){
+  isOpen = false;
+  fab.classList.remove('open');
+  drawer.classList.remove('open');
+  fab.setAttribute('aria-expanded','false');
+ }
+ fab.addEventListener('click', ()=> isOpen ? closeDrawer() : openDrawer());
+
+ // ---- Intro message + suggestions ----
+ function showIntro(){
+  addBotMsg("Hi 👋 I'm Akash's AI assistant. I know everything about his projects, skills, and how his work was built. What would you like to know?");
+  addSuggestions(SUGGESTIONS);
+ }
+
+ // ---- Helpers ----
+ function addBotMsg(text){
+  const el = document.createElement('div');
+  el.className = 'ai-msg bot';
+  el.textContent = text;
+  msgs.appendChild(el);
+  scrollDown();
+  return el;
+ }
+ function addUserMsg(text){
+  const el = document.createElement('div');
+  el.className = 'ai-msg user';
+  el.textContent = text;
+  msgs.appendChild(el);
+  scrollDown();
+ }
+ function addSuggestions(list){
+  const row = document.createElement('div');
+  row.className = 'ai-suggestion-row';
+  list.forEach(label=>{
+   const btn = document.createElement('button');
+   btn.className = 'ai-suggestion';
+   btn.type = 'button';
+   btn.textContent = label;
+   btn.addEventListener('click', ()=>{
+    row.remove();
+    sendMessage(label);
+   });
+   row.appendChild(btn);
+  });
+  msgs.appendChild(row);
+  scrollDown();
+ }
+ function scrollDown(){
+  msgs.scrollTop = msgs.scrollHeight;
+ }
+ function setLoading(state){
+  isStreaming = state;
+  sendBtn.disabled = state;
+  input.disabled = state;
+ }
+
+ // ---- Send message ----
+ async function sendMessage(text){
+  if(isStreaming || !text.trim()) return;
+  addUserMsg(text);
+  setLoading(true);
+
+  // Create streaming bot bubble
+  const bubble = document.createElement('div');
+  bubble.className = 'ai-msg bot typing-bubble';
+  bubble.textContent = '';
+  msgs.appendChild(bubble);
+  scrollDown();
+
+  try {
+   const res = await fetch(API, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ message: text, session_id: SESSION_ID })
+   });
+
+   if(!res.ok) throw new Error('Server error ' + res.status);
+
+   const reader = res.body.getReader();
+   const decoder = new TextDecoder('utf-8');
+   let reply = '';
+
+   while(true){
+    const {done, value} = await reader.read();
+    if(done) break;
+    const chunk = decoder.decode(value, {stream:true});
+    reply += chunk;
+    bubble.textContent = reply;
+    scrollDown();
+   }
+   bubble.classList.remove('typing-bubble');
+
+  } catch(e) {
+   bubble.classList.remove('typing-bubble');
+   if(bubble.textContent === ''){
+    bubble.textContent = '⚠️ Could not reach the AI backend. Make sure the FastAPI server is running.';
+   }
+  }
+  setLoading(false);
+  input.focus();
+ }
+
+ // ---- Form submit ----
+ form.addEventListener('submit', e=>{
+  e.preventDefault();
+  const text = input.value.trim();
+  if(!text) return;
+  input.value = '';
+  input.style.height = '';
+  sendMessage(text);
+ });
+
+ // ---- Auto-resize textarea ----
+ input.addEventListener('input', ()=>{
+  input.style.height = '';
+  input.style.height = Math.min(input.scrollHeight, 100) + 'px';
+ });
+
+ // ---- Send on Enter (Shift+Enter = newline) ----
+ input.addEventListener('keydown', e=>{
+  if(e.key === 'Enter' && !e.shiftKey){
+   e.preventDefault();
+   form.dispatchEvent(new Event('submit'));
+  }
+ });
+
+ // ---- Close on Escape ----
+ document.addEventListener('keydown', e=>{
+  if(e.key === 'Escape' && isOpen) closeDrawer();
+ });
+
+})();
+/* ===== END AI CHAT WIDGET ===== */
+</script>
+</body>
+</html>
