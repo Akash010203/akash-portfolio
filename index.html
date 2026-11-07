@@ -558,9 +558,10 @@ addEventListener("scroll",()=>{const h=document.documentElement;$("#progress").s
 /* ===== AI CHAT WIDGET SCRIPT ===== */
 (function(){
  // ---- CONFIG ----
- // Change this to your deployed backend URL when you go live.
- // For local dev keep it as localhost.
- const API = 'http://127.0.0.1:8000/api/chat';
+ // In production on Vercel, use relative path '/api/chat'. If testing on local Live Server, fallback to localhost:8000.
+ const API = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && window.location.port !== '8000' && window.location.port !== ''
+  ? 'http://127.0.0.1:8000/api/chat'
+  : '/api/chat';
 
  // Starter suggestions shown before first message
  const SUGGESTIONS = [

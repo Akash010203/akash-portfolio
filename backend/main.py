@@ -8,6 +8,8 @@ from groq import Groq
 from dotenv import load_dotenv
 from portfolio_context import SYSTEM_PROMPT
 
+# Load .env from backend directory or root directory
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 load_dotenv()
 
 app = FastAPI(title="Akash Portfolio AI", version="1.0.0")
@@ -21,8 +23,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Groq client — reads GROQ_API_KEY from .env
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+def get_groq_client():
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        raise HTTPException(
+            status_code=500,
+            detail="GROQ_API_KEY environment variable is missing. Please set it in Vercel settings or .env file."
+        )
+    return Groq(api_key=api_key)
 
 # Keep a lightweight conversation memory per session using a simple in-memory store
 # (resets on server restart — good enough for a portfolio)
@@ -57,6 +65,7 @@ async def chat(req: ChatRequest):
     async def stream_response():
         full_reply = ""
         try:
+            client = get_groq_client()
             stream = client.chat.completions.create(
                 model="qwen/qwen3.8-27b",   # 27B model — fast & free on Groq
                 messages=[
